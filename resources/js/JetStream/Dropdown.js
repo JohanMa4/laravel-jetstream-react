@@ -36,68 +36,18 @@ export default function Dropdown(props) {
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                     >
-                        <Menu.Items
-                            static
-                            className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                        >
-                            <div className="py-1">
-                                {content ? content.props.children : null}
-                                {/* <Menu.Item>
-                                    {({ active }) => (
-                                        <a
-                                            href="#"
-                                            className={classNames(
-                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                'block px-4 py-2 text-sm'
-                                            )}
-                                        >
-                                            Account settings
-                                        </a>
-                                    )}
-                                </Menu.Item>
-                                <Menu.Item>
-                                    {({ active }) => (
-                                        <a
-                                            href="#"
-                                            className={classNames(
-                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                'block px-4 py-2 text-sm'
-                                            )}
-                                        >
-                                            Support
-                                        </a>
-                                    )}
-                                </Menu.Item>
-                                <Menu.Item>
-                                    {({ active }) => (
-                                        <a
-                                            href="#"
-                                            className={classNames(
-                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                'block px-4 py-2 text-sm'
-                                            )}
-                                        >
-                                            License
-                                        </a>
-                                    )}
-                                </Menu.Item>
-                                <form method="POST" action="#">
-                                    <Menu.Item>
-                                        {({ active }) => (
-                                            <button
-                                                type="submit"
-                                                className={classNames(
-                                                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                    'block w-full text-left px-4 py-2 text-sm'
-                                                )}
-                                            >
-                                                Sign out
-                                            </button>
-                                        )}
-                                    </Menu.Item>
-                                </form> */}
+                        {open &&
+                            <div
+                            className="absolute z-50 mt-2 rounded-md shadow-lg"
+                            // className="[widthClass, alignmentClasses]"
+                            style="display: none;" onClick={open = false}>
+                            <div className="rounded-md ring-1 ring-black ring-opacity-5"
+                                // className="contentClasses"
+                            >
+                                    {content ? content.props.children : null}
+                                </div>
                             </div>
-                        </Menu.Items>
+                        }
                     </Transition>
                 </>
             )}

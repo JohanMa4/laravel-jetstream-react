@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { usePage } from '@inertiajs/inertia-react';
 
 export default function Banner(props) {
     const show = true;
-    const style = usePage().props.jetstream.flash?.bannerStyle || 'success';
-    const message = usePage().props.jetstream.flash?.banner || '';
+    const page = usePage();
+    const style = page.props.jetstream.flash?.bannerStyle || 'success';
+    const message = page.props.jetstream.flash?.banner || '';
 
     const classes = () => {
         const classNames = {}
